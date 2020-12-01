@@ -24,18 +24,19 @@ class Game:
         to_beaker = to_beaker -1
         return to_beaker
 
-    def check_empty(self, current_to_beaker, current_from_beaker):
-        f = int(current_to_beaker)
+    def check_empty(self, current_to_beaker, current_from_beaker): # for checking if there if the same color os space in the beaker
+        f = int(current_from_beaker)
         t = int(current_to_beaker)
-        if "0" in beakers[f]:
+        if "0" in beakers[t]: check if there is space in the beaker
+            print("beaker has space left")
             return True
         else:
-            for m in beakers[f]:
-                if m == 0:
+            for layert in beakers[t]:
+                if layert == 0: #check if beaker is empty
                     return None
-                elif m != 0:
-                    for z in beakers[t]:
-                        if z == m:
+                elif layert != 0: # or if it has a color
+                    for layerf in beakers[f]: # go through layers of the from beaker
+                        if layert == layerf: # return true is there is a match 
                             return True
                         else:
                             return False
