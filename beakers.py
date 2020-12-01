@@ -36,8 +36,9 @@ class Game:
                     return None
                 elif layert != 0: # or if it has a color
                     for layerf in beakers[f]: # go through layers of the from beaker
-                        if layert == layerf: # return true is there is a match 
-                            return True
+                        if layerf != 0:
+                            if layert == layerf: # return true is there is a match 
+                                return True
                         else:
                             return False
 
